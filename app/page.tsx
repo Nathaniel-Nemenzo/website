@@ -7,7 +7,7 @@ import {
   TwitterIcon,
   ViewsIcon,
 } from 'components/icons';
-import { name, about, bio, avatar } from 'lib/info';
+import { name, avatar } from 'lib/info';
 
 export const revalidate = 60;
 
@@ -28,8 +28,7 @@ export default async function HomePage() {
     <section>
       <h1 className="font-bold text-3xl font-serif">{name}</h1>
       <p className="my-5 max-w-[460px] text-neutral-800 dark:text-neutral-200">
-        {about()}
-        {bio()}
+        Hi, I'm Nathaniel! I'm a software engineer and graduate of the University of Texas at Austin.
       </p>
       <div className="flex items-start md:items-center my-8 flex-col md:flex-row">
         <Image
