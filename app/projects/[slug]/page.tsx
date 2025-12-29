@@ -2,9 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Mdx } from 'components/mdx';
 import { allProjects } from 'contentlayer/generated';
-import { getTweets } from 'lib/twitter';
 import Balancer from 'react-wrap-balancer';
-// import ViewCounter from '../view-counter';
 import { GitHubIcon } from 'components/icons';
 
 export async function generateStaticParams() {
@@ -62,8 +60,6 @@ export default async function Project({ params }) {
         notFound();
     }
 
-    const tweets = await getTweets(project.tweetIds);
-
     return (
         <section>
           <script type="application/ld+json">
@@ -87,7 +83,7 @@ export default async function Project({ params }) {
             {/* <ViewCounter slug={project.slug} trackView /> */}
           </div>
           <hr/>
-          <Mdx code={project.body.code} tweets={tweets} />
+          <Mdx code={project.body.code} />
         </section>
       );
 }

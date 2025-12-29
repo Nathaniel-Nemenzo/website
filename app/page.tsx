@@ -4,8 +4,6 @@ import { getBlogViews, getTweetCount, getRepoCount } from 'lib/metrics';
 import {
   ArrowIcon,
   GitHubIcon,
-  TwitterIcon,
-  ViewsIcon,
 } from 'components/icons';
 import { name, avatar } from 'lib/info';
 
@@ -28,7 +26,8 @@ export default async function HomePage() {
     <section>
       <h1 className="font-bold text-3xl font-serif">{name}</h1>
       <p className="my-5 max-w-[460px] text-neutral-200 dark:text-neutral-800">
-        Hi, I'm Nathaniel! I'm a software engineer and graduate of the University of Texas at Austin.
+        Hello, I'm Nathaniel! If you've happened upon my website, you're likely one of the following: 
+        a friend, a coworker, a recruiter, or someone who stumbled here by accident. There's not much here right now, but I hope that eventually there will be. Nice to meet you!
       </p>
       <div className="flex items-start md:items-center my-8 flex-col md:flex-row">
         <Image
@@ -40,15 +39,6 @@ export default async function HomePage() {
           priority
         />
         <div className="mt-8 md:mt-0 ml-0 md:ml-6 space-y-2 text-neutral-400 dark:text-neutral-500">
-          {/* <a
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://twitter.com/leeerob"
-            className="flex items-center gap-2"
-          >
-            <TwitterIcon />
-            {`${tweetCount.toLocaleString()} tweets all time`}
-          </a> */}
           <a
             rel="noopener noreferrer"
             target="_blank"
@@ -56,11 +46,11 @@ export default async function HomePage() {
             className="flex items-center gap-2"
           >
             <GitHubIcon />
-            {`${repoCount.toLocaleString()} repositories`}
+            {`github`}
           </a>
-          <Link href="/blog" className="flex items-center">
-            <ViewsIcon />
-            {`${views.toLocaleString()} blog views all time`}
+                    <Link href="/blog" className="flex items-center gap-2">
+            <ArrowIcon />
+            <p className="h-7">linkedin</p>
           </Link>
         </div>
       </div>
@@ -72,21 +62,9 @@ export default async function HomePage() {
             target="_blank"
             href="https://linkedin.com/in/nnemenzo"
           >
-            <ArrowIcon />
-            <p className="h-7">connect with me on linkedin</p>
+
           </a>
         </li>
-        {/* <li>
-          <a
-            className="flex items-center hover:text-neutral-700 dark:hover:text-neutral-200 transition-all"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://leerob.substack.com"
-          >
-            <ArrowIcon />
-            <p className="h-7">get email updates</p>
-          </a>
-        </li> */}
       </ul>
     </section>
   );
