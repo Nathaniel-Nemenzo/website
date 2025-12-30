@@ -20,7 +20,7 @@ const navItems = {
   },
   '/projects': {
     name: 'projects',
-    x: 127,
+    x: 118,
     y: 69,
     w: '84px',
   },
